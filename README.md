@@ -15,4 +15,5 @@ Run
 
 ## Requirements
 
-Python 3.x
+[Python 3.x](https://www.python.org/downloads/)
+[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
