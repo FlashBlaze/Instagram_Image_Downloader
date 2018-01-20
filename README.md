@@ -11,7 +11,7 @@ Run
 `python insta.py` to get to know CLI and then after donwloading the image, 
 
 Run
-`filechange.py` to change the file name.
+`python filechange.py` to change the file name.
 
 ## Requirements
 
