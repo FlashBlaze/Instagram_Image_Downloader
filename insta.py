@@ -3,6 +3,8 @@ import urllib
 import urllib.request
 from bs4 import BeautifulSoup
 import datetime
+import os
+from datetime import datetime as dt
 
 def ShowHelp():
 	print ('Insta Image Downloader')
@@ -30,8 +32,16 @@ def DownloadSingleFile(fileURL):
 	imgURL = metaTag[0]['content']
 	fileName = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + '.jpg'
 	urllib.request.urlretrieve(imgURL, 'fileName.jpg')
-	print ('Done. Image saved to disk as ' + fileName)
+	
+	date_and_time = str(dt.now()).replace(":", "_").replace(" ", "_")
+	new_file = date_and_time + ".jpg"
+	old_file = "fileName.jpg"
 
+	try:
+		os.rename(old_file, new_file)
+		print("File name is: " + new_file)
+	except FileNotFoundError:
+		print("The file name is already changed")
 
 
 if __name__ == '__main__':
